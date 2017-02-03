@@ -1,0 +1,11 @@
+---
+
+  - name: download latest Rust version
+    get_url:
+      url: "{{ rust_archive_url }}"
+      dest: "{{ temp_directory_path }}/{{ rust_archive_name }}"
+
+  - name: install latest Rust version
+    shell: "sh {{ rust_archive_name }} -y"
+    args:
+      chdir: "{{ temp_directory_path }}"

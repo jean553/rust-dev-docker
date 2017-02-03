@@ -1,0 +1,6 @@
+---
+
+temp_directory_path: "/tmp"
+
+rust_archive_name: "sh.rustup.rs"
+rust_archive_url: "https://{{ rust_archive_name }}"
