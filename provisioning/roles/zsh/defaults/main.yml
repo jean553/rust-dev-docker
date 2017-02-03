@@ -1,0 +1,8 @@
+---
+
+root_directory: "/root"
+git_repo: "git://github.com/robbyrussell/oh-my-zsh.git"
+path: "{{ root_directory }}/.oh-my-zsh"
+
+default_template: "{{ path }}/templates/zshrc.zsh-template"
+local_template: "{{ root_directory }}/.zshrc"
