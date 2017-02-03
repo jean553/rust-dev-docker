@@ -1,0 +1,14 @@
+---
+
+  - name: install zsh
+    apt:
+      name=zsh
+      state=present
+
+  - name: clone oh-my-zsh
+    git:
+      repo={{ git_repo }}
+      dest={{ path }}
+
+  - name: copy basic zsh config
+    command: cp {{ default_template }} /root/.zshrc  
