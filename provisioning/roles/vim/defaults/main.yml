@@ -1,0 +1,16 @@
+---
+
+vim_directory: "/root/.vim"
+pathogen_download: "pathogen.vim"
+pathogen_autoload: "{{ vim_directory }}/autoload"
+pathogen_configuration: "{{ pathogen_autoload }}/{{ pathogen_download }}"
+pathogen_url: "https://tpo.pe/{{ pathogen_download }}"
+
+syntastic_url: "https://github.com/scrooloose/syntastic.git"
+syntastic_directory: "{{ vim_directory }}/bundle/syntastic"
+
+vim_bundle_directory: "{{ vim_directory }}/bundle"
+
+vim_rust_conf: "rust.vim.git"
+vim_rust_url: "https://github.com/rust-lang/{{ vim_rust_conf }}"
+vim_rust_path: "{{ vim_bundle_directory }}/{{ vim_rust_conf }}"
