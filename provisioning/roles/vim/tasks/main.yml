@@ -1,0 +1,31 @@
+---
+
+  - name: install vim
+    apt:
+      name=vim
+      state=present
+
+  - name: ensure vim configuration directory exists
+    file:
+      path={{ item }}
+      state=directory
+    with_items:
+      - "{{ pathogen_autoload }}"
+      - "{{ vim_bundle_directory }}"
+
+  - name: install pathogen for syntastic
+    get_url: 
+      url={{ pathogen_url }}
+      dest={{ pathogen_configuration }}
+
+  - name: install syntastic
+    git:
+      repo={{ syntastic_url }}
+      dest={{ syntastic_directory }}
+      clone=yes
+
+  - name: install vim rust syntax checker
+    git:
+      repo={{ vim_rust_url }}
+      dest={{ vim_rust_path }}
+      clone=yes
