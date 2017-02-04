@@ -1,0 +1,11 @@
+---
+
+  - name: add Rust into path environment variable
+    lineinfile:
+      line="export PATH=$PATH:{{ cargo_path }}"
+      dest="{{ zshrc_path }}"
+
+  - name: set user environment variable
+    lineinfile:
+      line="export USER={{ user }}"
+      dest="{{ zshrc_path }}"

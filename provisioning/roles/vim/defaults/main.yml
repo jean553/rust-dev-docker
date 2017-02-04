@@ -14,3 +14,6 @@ vim_bundle_directory: "{{ vim_directory }}/bundle"
 vim_rust_conf: "rust.vim.git"
 vim_rust_url: "https://github.com/rust-lang/{{ vim_rust_conf }}"
 vim_rust_path: "{{ vim_bundle_directory }}/{{ vim_rust_conf }}"
+
+vimrc_source: "roles/vim/files/vimrc"
+vimrc_destination: "/root/.vimrc"
