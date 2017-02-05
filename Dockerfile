@@ -24,3 +24,5 @@ COPY provisioning/ provisioning
 # Execute ansible playbook(s).
 
 RUN ansible-playbook provisioning/site.yml -c local
+
+CMD ["/bin/zsh"]
