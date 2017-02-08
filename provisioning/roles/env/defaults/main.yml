@@ -1,6 +1,6 @@
 ---
 
-user: "root"
-root_directory: "/{{ user }}"
-zshrc_path: "{{ root_directory }}/.zshrc"
-cargo_path: "{{ root_directory }}/.cargo/bin"
+user: "vagrant"
+user_directory: "/home/{{ user }}"
+zshrc_path: "{{ user_directory }}/.zshrc"
+cargo_path: "{{ user_directory }}/.cargo/bin"
