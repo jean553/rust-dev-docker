@@ -6,3 +6,9 @@ path: "{{ user_directory }}/.oh-my-zsh"
 
 default_template: "{{ path }}/templates/zshrc.zsh-template"
 local_template: "{{ user_directory }}/.zshrc"
+
+bashrc_path: "{{ user_directory }}/.bashrc"
+zshrc_path: "{{ user_directory }}/.zshrc"
+
+zshrc_source: "roles/zsh/files/zshrc"
+zshrc_destination: "{{ user_directory }}/.zshrc"
