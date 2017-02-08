@@ -12,3 +12,13 @@
 
   - name: copy basic zsh config
     command: cp {{ default_template }} /root/.zshrc  
+
+  - name: set zsh as default shell
+    lineinfile:
+      line="exec zsh"
+      dest="{{ bashrc_path }}"
+
+  - name: copy zsh configuration
+    copy:
+      src="{{ zshrc_source }}"
+      dest="{{ zshrc_destination }}"
