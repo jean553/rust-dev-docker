@@ -1,6 +1,6 @@
 ---
 
-vim_directory: "/root/.vim"
+vim_directory: "/home/vagrant/.vim"
 pathogen_download: "pathogen.vim"
 pathogen_autoload: "{{ vim_directory }}/autoload"
 pathogen_configuration: "{{ pathogen_autoload }}/{{ pathogen_download }}"
@@ -16,4 +16,4 @@ vim_rust_url: "https://github.com/rust-lang/{{ vim_rust_conf }}"
 vim_rust_path: "{{ vim_bundle_directory }}/{{ vim_rust_conf }}"
 
 vimrc_source: "roles/vim/files/vimrc"
-vimrc_destination: "/root/.vimrc"
+vimrc_destination: "/home/vagrant/.vimrc"

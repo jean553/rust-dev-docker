@@ -4,8 +4,12 @@
     get_url:
       url: "{{ rust_archive_url }}"
       dest: "{{ temp_directory_path }}/{{ rust_archive_name }}"
+    become: yes
+    become_user: vagrant
 
   - name: install latest Rust version
     shell: "sh {{ rust_archive_name }} -y"
     args:
       chdir: "{{ temp_directory_path }}"
+    become: yes
+    become_user: vagrant

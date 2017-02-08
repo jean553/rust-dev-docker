@@ -3,6 +3,8 @@ FROM phusion/baseimage
 
 # Only installs ansible's minimal required dependencies.
 
+ENV SUDOFILE /etc/sudoers
+
 RUN apt-get update -y && \
     apt-get upgrade -y
 
@@ -10,7 +12,8 @@ RUN apt-get install -y \
     python-dev \
     python-pip  \
     libffi-dev \
-    libssl-dev
+    libssl-dev \
+    sudo
 
 RUN pip install --upgrade \
     ansible \
@@ -18,6 +21,24 @@ RUN pip install --upgrade \
     packaging \
     pyparsing \
     appdirs
+
+# ssh configuration for Vagrant usage
+RUN \
+    rm -f /etc/service/sshd/down && \
+    echo 'PermitEmptyPasswords yes' >> /etc/ssh/sshd_config && \
+    echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config && \
+    useradd \
+        --shell /bin/bash \
+        --create-home --base-dir /home \
+        --user-group \
+        --groups sudo,ssh \
+        --password '' \
+        vagrant && \
+    mkdir -p /home/vagrant/.ssh && \
+    chown -R vagrant:vagrant /home/vagrant/.ssh && \
+    chmod u+w ${SUDOFILE} && \
+    echo '%sudo   ALL=(ALL:ALL) NOPASSWD: ALL' >> ${SUDOFILE} && \
+    chmod u-w ${SUDOFILE}
 
 COPY provisioning/ provisioning
 

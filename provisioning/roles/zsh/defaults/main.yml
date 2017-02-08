@@ -1,8 +1,8 @@
 ---
 
-root_directory: "/root"
+user_directory: "/home/vagrant"
 git_repo: "git://github.com/robbyrussell/oh-my-zsh.git"
-path: "{{ root_directory }}/.oh-my-zsh"
+path: "{{ user_directory }}/.oh-my-zsh"
 
 default_template: "{{ path }}/templates/zshrc.zsh-template"
-local_template: "{{ root_directory }}/.zshrc"
+local_template: "{{ user_directory }}/.zshrc"
