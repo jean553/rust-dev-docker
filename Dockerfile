@@ -1,5 +1,5 @@
 # vim:set ft=dockerfile
-FROM debian:jessie
+FROM phusion/baseimage
 
 # Only installs ansible's minimal required dependencies.
 
@@ -25,4 +25,4 @@ COPY provisioning/ provisioning
 
 RUN ansible-playbook provisioning/site.yml -c local
 
-CMD ["/bin/zsh"]
+CMD ["/sbin/my_init"]
