@@ -34,6 +34,9 @@
       repo={{ vundle_repo }}
       dest={{ vundle_destination }}
 
+  - name: install youcompleteme
+    shell: vim +PluginInstall +qall
+
   - name: copy vim configuration
     copy:
       src={{ vimrc_source }}
