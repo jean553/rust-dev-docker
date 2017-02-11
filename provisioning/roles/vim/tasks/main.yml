@@ -28,13 +28,9 @@
     git:
       repo={{ vim_rust_url }}
       dest={{ vim_rust_path }}
-
-  - name: install vundle for youcompleteme
-    git:
-      repo={{ vundle_repo }}
-      dest={{ vundle_destination }}
+      clone=yes
 
   - name: copy vim configuration
     copy:
-      src={{ vimrc_source }}
-      dest={{ vimrc_destination }}
+      src="{{ vimrc_source }}"
+      dest="{{ vimrc_destination }}"
