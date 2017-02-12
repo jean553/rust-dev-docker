@@ -7,8 +7,8 @@
     become: yes
     become_user: vagrant
 
-  - name: install latest Rust version
-    shell: "sh {{ rust_archive_name }} -y"
+  - name: install latest Rust nightly version
+    shell: "sh {{ rust_archive_name }} -y --channel=nightly"
     args:
       chdir: "{{ temp_directory_path }}"
     become: yes
