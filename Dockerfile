@@ -5,6 +5,8 @@ FROM phusion/baseimage
 
 ENV SUDOFILE /etc/sudoers
 
+COPY change_user_uid.sh /
+
 RUN apt-get update -y && \
     apt-get upgrade -y
 
@@ -46,4 +48,7 @@ COPY provisioning/ provisioning
 
 RUN ansible-playbook provisioning/site.yml -c local
 
+RUN chmod +x /change_user_uid.sh
+
+ENTRYPOINT /change_user_uid.sh
 CMD ["/sbin/my_init"]
