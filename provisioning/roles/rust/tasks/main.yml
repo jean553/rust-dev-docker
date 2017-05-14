@@ -1,14 +1,14 @@
 ---
 
-  - name: download latest Rust version
+  - name: download rustup
     get_url:
-      url: "{{ rust_archive_url }}"
-      dest: "{{ temp_directory_path }}/{{ rust_archive_name }}"
+      url: "{{ rustup_url }}"
+      dest: "{{ temp_directory_path }}/{{ rustup_archive_name }}"
     become: yes
     become_user: vagrant
 
-  - name: install latest Rust nightly version
-    shell: "sh {{ rust_archive_name }} -y --channel=nightly"
+  - name: install rustup and rust nightly
+    shell: "sh {{ rustup_archive_name }} --default-toolchain nightly -y"
     args:
       chdir: "{{ temp_directory_path }}"
     become: yes
