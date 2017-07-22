@@ -23,6 +23,12 @@ d.image = "jean553/rust-dev-docker"
 
 ## More features
 
+### Environment variables
+
+Your `Vagrantfile` must provides the following environment variables
+for the container created from this image:
+* `APP_PATH` the full path to the application
+
 ### Use `kcov` coverage
 
 `kcov` requires some security options when running `docker run`.

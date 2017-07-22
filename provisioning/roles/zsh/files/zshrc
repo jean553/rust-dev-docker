@@ -17,3 +17,6 @@ source $ZSH/oh-my-zsh.sh
 # load Vagrant environment variables from /etc/container_environment.sh
 # this file is created by phusion/base-image
 sudo cat /etc/container_environment.sh | grep -v 'export _=' | source /dev/stdin
+
+# `APP_PATH` is set by the project Vagrantfile
+cd $APP_PATH
