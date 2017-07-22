@@ -7,4 +7,5 @@
     - zsh
     - vim
     - rust
+    - kcov
     - env
