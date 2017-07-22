@@ -20,6 +20,7 @@
       - libbfd-dev
       - libiberty-dev
 
+  # TODO: #19 check if we can use a cmake ansible role
   - name: prepare cmake for compilation
     file:
       path=/tmp/kcov/build
