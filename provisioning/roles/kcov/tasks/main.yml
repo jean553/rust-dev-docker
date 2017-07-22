@@ -1,0 +1,37 @@
+---
+
+  - name: clone kcov latest master (for Rust support)
+    git:
+      repo: https://github.com/SimonKagstrom/kcov
+      dest: /tmp/kcov
+
+  - name: install kcov builds requirements 
+    apt:
+      name="{{ item }}"
+      state=present
+      update_cache=yes
+    with_items:
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+      - cmake
+      - gcc
+      - pkg-config
+      - libbfd-dev
+      - libiberty-dev
+
+  - name: prepare cmake for compilation
+    file:
+      path=/tmp/kcov/build
+      state=directory
+
+  - name: execute cmake command
+    shell: cmake ..
+    args:
+      chdir: /tmp/kcov/build
+
+  - name: execute make command
+    make:
+      chdir: /tmp/kcov/build
+      target: install
+    become: yes
