@@ -20,3 +20,23 @@ Define a VM in your Vagrantfile with the following line:
 ```ruby
 d.image = "jean553/rust-dev-docker"
 ```
+
+## More features
+
+### Use `kcov` coverage
+
+`kcov` requires some security options when running `docker run`.
+The expected security option is `--security-opt seccomp=unconfined`.
+
+```ruby
+d.create_args = ["--security-opt=seccomp=unconfined"]
+```
+
+Generate the coverage:
+
+```bash
+cargo test --no-run
+kcov --verify target/cov target/debug/{library-compiled-binary-file}
+```
+
+The generated coverage can be found in `target/cov/index.html`.
