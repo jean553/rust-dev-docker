@@ -4,6 +4,9 @@ set shiftwidth=4
 set expandtab
 syntax on
 
+set colorcolumn=80
+set nu
+
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
