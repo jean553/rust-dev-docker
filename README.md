@@ -1,3 +1,6 @@
+[![Docker Automated build](https://img.shields.io/docker/automated/jean553/rust-dev-docker.svg)]()
+[![Docker Build Status](https://img.shields.io/docker/build/jean553/rust-dev-docker.svg)]()
+
 # rust-dev-docker
 
 A docker image to be used with Vagrant for Rust applications development.
