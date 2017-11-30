@@ -36,6 +36,7 @@ for the container created from this image:
 
 `kcov` requires some security options when running `docker run`.
 The expected security option is `--security-opt seccomp=unconfined`.
+(check issue here: https://github.com/SimonKagstrom/kcov/issues/151)
 
 ```ruby
 d.create_args = ["--security-opt=seccomp=unconfined"]
