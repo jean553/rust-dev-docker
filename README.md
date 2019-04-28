@@ -12,10 +12,6 @@ A docker image to be used with Vagrant for Rust applications development.
 * vim, syntastic, pathogen
 * zsh
 
-## Todo
-
-* add autocomplete
-
 ## Usage
 
 Define a VM in your Vagrantfile with the following line:
