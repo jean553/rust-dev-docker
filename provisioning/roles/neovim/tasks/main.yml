@@ -10,3 +10,12 @@
       state=present
       update_cache=yes
 
+  - name: ensure neovim configuration directory exists
+    file:
+      path=/home/vagrant/.config/nvim
+      state=directory
+
+  - name: copy neovim configuration
+    copy:
+      src=roles/neovim/files/init.vim
+      dest=/home/vagrant/.config/nvim/init.vim
