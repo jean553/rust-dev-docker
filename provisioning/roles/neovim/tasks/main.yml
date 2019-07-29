@@ -14,8 +14,26 @@
     file:
       path=/home/vagrant/.config/nvim
       state=directory
+    become: yes
+    become_user: vagrant
 
   - name: copy neovim configuration
     copy:
       src=roles/neovim/files/init.vim
       dest=/home/vagrant/.config/nvim/init.vim
+    become: yes
+    become_user: vagrant
+
+  - name: ensure neovim pluggin directory exists
+    file:
+      path=/home/vagrant/.local/share/nvim/site/autoload
+      state=directory
+    become: yes
+    become_user: vagrant
+
+  - name: install vim-plug for pluggins management
+    get_url:
+      url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      dest=/home/vagrant/.local/share/nvim/site/autoload/plug.vim
+    become: yes
+    become_user: vagrant
