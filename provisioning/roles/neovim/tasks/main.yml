@@ -38,6 +38,12 @@
     become: yes
     become_user: vagrant
 
+  - name: install python3 support for neovim
+    pip:
+      name=neovim
+      executable=pip3
+    become: yes
+
   - name: install language server client plugin into neovim
     shell: nvim +PlugInstall +UpdateRemotePlugins +qa
     become: yes
