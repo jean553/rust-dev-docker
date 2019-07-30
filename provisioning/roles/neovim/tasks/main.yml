@@ -37,3 +37,8 @@
       dest=/home/vagrant/.local/share/nvim/site/autoload/plug.vim
     become: yes
     become_user: vagrant
+
+  - name: install language server client plugin into neovim
+    shell: nvim +PlugInstall +UpdateRemotePlugins +qa
+    become: yes
+    become_user: vagrant
