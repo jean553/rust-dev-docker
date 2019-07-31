@@ -9,24 +9,25 @@ A docker image to be used with Vagrant for Rust applications development.
 
 * Phusion (Ubuntu for Docker) (https://github.com/phusion/baseimage-docker)
 * Latest Rust version (from https://www.rust-lang.org/en-US/install.html)
-* vim, syntastic, pathogen
+* neovim, Rust Language Server
 * zsh
 
-## Usage
+## Usage with Vagrant
 
-Define a VM in your Vagrantfile with the following line:
+Create a container built from the image:
 
 ```ruby
 d.image = "jean553/rust-dev-docker"
 ```
 
+Set `APP_PATH` from the Vagrantfile. This variable is the project path into the container.
+
+You can then start your container with Vagrant.
+
+Note that using external crates into your project may increase the loading time
+needed for the Rust Language Features to be fully operational into neovim.
+
 ## More features
-
-### Environment variables
-
-Your `Vagrantfile` must provides the following environment variables
-for the container created from this image:
-* `APP_PATH` the full path to the application
 
 ### Use `kcov` coverage
 
