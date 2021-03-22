@@ -9,7 +9,7 @@ autocmd BufReadPost *.rs setlocal filetype=rust
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly-2019-07-19', 'rls'],
+    \ 'rust': ['rustup', 'run', 'nightly-2021-03-21', 'rls'],
     \ }
 
 " Automatically start language servers.
