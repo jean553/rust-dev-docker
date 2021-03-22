@@ -1,5 +1,5 @@
 # vim:set ft=dockerfile
-FROM phusion/baseimage
+FROM phusion/baseimage:master
 
 # Only installs ansible's minimal required dependencies.
 
@@ -11,13 +11,13 @@ RUN apt-get update -y && \
     apt-get upgrade -y
 
 RUN apt-get install -y \
-    python-dev \
-    python-pip  \
+    python3-dev \
+    python3-pip  \
     libffi-dev \
     libssl-dev \
     sudo
 
-RUN pip install --upgrade \
+RUN pip3 install --upgrade \
     ansible \
     setuptools \
     packaging \
