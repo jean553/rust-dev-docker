@@ -15,28 +15,28 @@
     become_user: vagrant
 
   - name: set default toolchain version compliant with RLS
-    shell: "./rustup default nightly-2021-03-21"
+    shell: "./rustup default nightly-2021-04-17"
     args:
       chdir: "/home/vagrant/.cargo/bin"
     become: yes
     become_user: vagrant
 
   - name: install RLS preview for text editors
-    shell: "./rustup component add rls-preview --toolchain nightly-2021-03-21"
+    shell: "./rustup component add rls-preview --toolchain nightly-2021-04-17"
     args:
       chdir: "/home/vagrant/.cargo/bin"
     become: yes
     become_user: vagrant
 
   - name: install rust analysis for text editors
-    shell: "./rustup component add rust-analysis --toolchain nightly-2021-03-21"
+    shell: "./rustup component add rust-analysis --toolchain nightly-2021-04-17"
     args:
       chdir: "/home/vagrant/.cargo/bin"
     become: yes
     become_user: vagrant
 
   - name: install rust source for text editors
-    shell: "./rustup component add rust-src --toolchain nightly-2021-03-21"
+    shell: "./rustup component add rust-src --toolchain nightly-2021-04-17"
     args:
       chdir: "/home/vagrant/.cargo/bin"
     become: yes
